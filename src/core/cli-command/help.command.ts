@@ -1,6 +1,6 @@
 import { CliCommandInterface } from './cli-command.interface';
 
-export default class HelperCommand implements CliCommandInterface {
+export default class HelpCommand implements CliCommandInterface {
   public readonly name = '--help';
 
   public async execute(): Promise<void> {
