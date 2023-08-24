@@ -1,6 +1,6 @@
 import { CliCommandInterface } from '../core/cli-command/cli-command.interface';
 
-type parsedCommand = {
+type ParsedCommand = {
   [key: string]: string[];
 };
 
@@ -8,7 +8,7 @@ export default class CLIApplication {
   private commands: { [propertyName: string]: CliCommandInterface } = {};
   private defaultCommand = '--help';
 
-  private parseCommand(cliArguments: string[]): parsedCommand {
+  private parseCommand(cliArguments: string[]): ParsedCommand {
     const parsedCommand: ParsedCommand = {};
     let command = '';
 
@@ -19,6 +19,7 @@ export default class CLIApplication {
       } else if (command && item) {
         acc[command].push(item);
       }
+      return acc;
     }, parsedCommand);
   }
 
