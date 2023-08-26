@@ -1,4 +1,4 @@
-import { CliCommandInterface } from "./cli-command/cli-command.interface";
+import { CliCommandInterface } from "./cli-command.interface";
 
 
 export default class ImportCommand implements CliCommandInterface {
