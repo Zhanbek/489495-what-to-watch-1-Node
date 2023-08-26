@@ -26,7 +26,7 @@ export default class CLIApplication {
   public getCommand(commandName: string): CliCommandInterface {
     return this.commands[commandName] ?? this.commands[this.defaultCommand];
   }
-
+  
   public processCommand(argv: string[]): void {
     const parsedCommand = this.parseCommand(argv);
     const [commandName] = Object.keys(parsedCommand);
