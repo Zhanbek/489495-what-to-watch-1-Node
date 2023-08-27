@@ -1,5 +1,5 @@
-import { User } from './user.type.js';
 import { Genre } from './genre.type.js';
+import { Actor } from './actor.type.js';
 
 export type Movie = {
   title: string;
@@ -10,11 +10,11 @@ export type Movie = {
   rating: number;
   videoPreview: string;
   video: string;
-  actors: string;
+  actors: Actor[];
   director: string;
   duration: number;
   commentsCount: number;
-  user: User;
+  user: string;
   poster: string;
   backgroundImage: string;
   backgroundColor: string;

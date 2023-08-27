@@ -25,15 +25,15 @@ export default class TSVFileReader implements FileReaderInterface {
         ([
           title,
           description,
-          createDate,
+          postDateStr,
           genreValue,
-          issueYear,
-          rating,
+          issueYearStr,
+          ratingStr,
           videoPreview,
           video,
-          actors,
+          actorsStr,
           director,
-          duration,
+          durationStr,
           commentsCount,
           user,
           poster,
@@ -42,7 +42,7 @@ export default class TSVFileReader implements FileReaderInterface {
         ]) => ({
           title,
           description,
-          postDate: new Date(createDate),
+          postDate: new Date(postDateStr),
           genre:
             Genre[
               genreValue as
@@ -56,13 +56,13 @@ export default class TSVFileReader implements FileReaderInterface {
                 | 'Scifi'
                 | 'Thriller'
             ],
-          issueYear,
-          rating,
+          issueYear: Number.parseInt(issueYearStr, 10),
+          rating: Number.parseFloat(ratingStr),
           videoPreview,
           video,
-          actors: actors.split(';').map((name) => ({ name })),
+          actors: actorsStr.split(';').map((name) => ({ name })),
           director,
-          duration,
+          duration: Number.parseInt(durationStr, 10),
           commentsCount: Number.parseInt(commentsCount, 10),
           user,
           poster,
