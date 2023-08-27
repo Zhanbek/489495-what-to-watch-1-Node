@@ -1,7 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { FileReaderInterface } from './file-reader.interface.js';
 import { Movie } from '../../types/movie.type.js';
-import { User } from '../../types/user.type.js';
 import { Genre } from '../../types/genre.type.js';
 
 export default class TSVFileReader implements FileReaderInterface {
@@ -65,7 +64,7 @@ export default class TSVFileReader implements FileReaderInterface {
           director,
           duration,
           commentsCount: Number.parseInt(commentsCount, 10),
-          user: { email, firstName, lastName, avaraPath },
+          user,
           poster,
           backgroundImage,
           backgroundColor,
