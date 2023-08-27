@@ -1,4 +1,4 @@
-import { User } from "./user.type";
+import { User } from './user.type';
 import { Genre } from './genre.type';
 
 export type Movie = {
@@ -18,4 +18,4 @@ export type Movie = {
   poster: string;
   backgroundImage: string;
   backgroundColor: string;
-}
+};
